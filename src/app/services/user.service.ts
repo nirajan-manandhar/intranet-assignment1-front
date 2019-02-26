@@ -22,8 +22,13 @@ export class UserService {
   user: User;
   constructor(private http: HttpClient) { }
 
-  doRegsiter(username: string, password: string) {
-
+  doRegister(payload) {
+    return this.http.post<any>(this.URL + 'users/register', payload).pipe(map(user => {
+      this.token = user.token;
+      this.role = user.user.role;
+      this.user = user.user;
+      return user;
+    })).toPromise();
   }
 
   doLogin(username: string, password: string) {

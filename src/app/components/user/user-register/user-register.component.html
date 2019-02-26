@@ -1,3 +1,49 @@
-<p>
-  user-register works!
-</p>
+<mat-grid-list cols="2" rowHeight="5rem">
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Username" [formControl]="username" required>
+      <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'"
+        required>
+      <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="First Name" [formControl]="firstName" required>
+      <mat-error *ngIf="firstName.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" [formControl]="lastName" required>
+      <mat-error *ngIf="lastName.invalid">{{getLastNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Country" [formControl]="country" required>
+      <mat-error *ngIf="country.invalid">{{getCountryErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Mobile Number" [formControl]="mobileNumber" required>
+      <mat-error *ngIf="mobileNumber.invalid">{{getMobileNumberErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2">
+    <button (click)="doRegister()" mat-button>Register</button>
+  </mat-grid-tile>
+</mat-grid-list>

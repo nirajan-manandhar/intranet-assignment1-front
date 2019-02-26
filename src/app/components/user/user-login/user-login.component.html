@@ -1,4 +1,4 @@
-<mat-grid-list cols="1" rowHeight="5rem">
+<mat-grid-list cols="2" rowHeight="5rem">
   <mat-grid-tile>
     <mat-form-field>
       <input matInput placeholder="Username" [formControl]="username" required>
@@ -13,7 +13,7 @@
       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </mat-form-field>
   </mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile colspan="2">
     <button (click)="doLogin()" mat-button>Login</button>
   </mat-grid-tile>
 </mat-grid-list>
