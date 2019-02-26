@@ -1,0 +1,6 @@
+<div class="center">
+  <a *ngIf="!isLoggedIn()" [routerLink]="['/login']" class="center" mat-button>Login</a>
+  <a *ngIf="!isLoggedIn()" [routerLink]="['/register']" class="center" mat-button>Register</a>
+  <a *ngIf="isLoggedIn()" [routerLink]="['/boat']" class="center" mat-button>Boats</a>
+  <button *ngIf="isLoggedIn()" (click)="logOut()" class="center" mat-button>Logout</button>
+</div>
