@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html>
-<body>
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
 
-<h3>Request</h3>
-
-<form action="getBoats()">
-  Username:<br>
-  <input type="text" name="username">
-  <br>
-  Password:<br>
-  <input type="text" name="password">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-
-<button id="getBoats">Get Patients</button>
-<pre id="preOutput"></pre>
-<script>
-$(function () {
-  var getBoats = function() {
-    var url = "https://localhost:5001/api/boats";
-    $.get(url).always(showResponse);
-    return false;
-  };
-
-  var showResponse = function(object) {
-    $("preOutput").text(JSON.stringify(object, null, 4));
-  };
-
-  $("#btnGetPatients").click(getBoats);
-});
-</script>
-
-</body>
-</html>
