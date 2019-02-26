@@ -21,6 +21,11 @@ import { UserComponent } from './components/user/user.component';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BoatComponent } from './components/boat/boat.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { BoatAddComponent } from './components/boat/boat-add/boat-add.component';
+import { BoatEditComponent } from './components/boat/boat-edit/boat-edit.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     UserLoginComponent,
     UserRegisterComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    BoatComponent,
+    BoatAddComponent,
+    BoatEditComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
     StorageServiceModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

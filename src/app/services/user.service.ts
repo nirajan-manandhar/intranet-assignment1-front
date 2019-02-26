@@ -49,12 +49,4 @@ export class UserService {
     this.role = null;
     this.user = null;
   }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error); // log to console instead
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
 }

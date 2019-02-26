@@ -1,0 +1,32 @@
+<mat-grid-list cols="2" rowHeight="5rem">
+  <mat-grid-tile rowspan="5">
+    <mat-form-field>
+      <input matInput placeholder="Boat Name" [formControl]="boatName" required>
+      <mat-error *ngIf="boatName.invalid">{{getBoatNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="5">
+    <ckeditor [editor]="Editor" [(ngModel)]="model.editorData"></ckeditor>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Picture" [formControl]="picture" required>
+      <mat-error *ngIf="picture.invalid">{{getPictureErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="Length in Feet" [formControl]="lengthInFeet" required>
+      <mat-error *ngIf="lengthInFeet.invalid">{{getLengthInFeetErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput placeholder="make" [formControl]="make" required>
+      <mat-error *ngIf="make.invalid">{{getMakeErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2">
+    <button (click)="doAdd()" mat-button>Add</button>
+  </mat-grid-tile>
+</mat-grid-list>

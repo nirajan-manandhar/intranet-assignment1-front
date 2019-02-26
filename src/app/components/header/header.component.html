@@ -11,10 +11,10 @@
       <button (click)="logOut()" mat-button>Logout</button>
     </mat-grid-tile>
     <mat-grid-tile colspan="1" *ngIf="!isLoggedIn()">
-      <a [routerLink]="['/login']" mat-button>Login</a>
+      <a [routerLink]="['/user/login']" mat-button>Login</a>
     </mat-grid-tile>
     <mat-grid-tile colspan="1" *ngIf="!isLoggedIn()">
-      <a [routerLink]="['/register']" mat-button>Register</a>
+      <a [routerLink]="['/user/register']" mat-button>Register</a>
     </mat-grid-tile>
   </mat-grid-list>
 </mat-card>

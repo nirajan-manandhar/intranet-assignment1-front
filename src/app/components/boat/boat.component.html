@@ -1,0 +1,30 @@
+<a [routerLink]="['/boat/add']" mat-button>Add</a>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let boat of boats">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{boat.boatName}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{boat.make}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="2" rowHeight="2rem">
+      <mat-grid-tile colspan="2" rowspan="5">
+        <img src="{{boat.picture}}" height="160" width="160" />
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="10">
+        Length: {{boat.lengthInFeet}} ft
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="10">
+        <ckeditor [editor]="Editor" data="{{boat.description}}"></ckeditor>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <a [routerLink]="['/boat/edit/', boat.boatId]" mat-button>Edit</a>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button (click)="doDelete(boat.boatId)" mat-button>Delete</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -32,23 +32,23 @@ export class UserRegisterComponent implements OnInit {
   }
 
   getFirstNameErrorMessage() {
-    return this.username.hasError('required') ? 'You must enter first name' : '';
+    return this.firstName.hasError('required') ? 'You must enter first name' : '';
   }
 
   getLastNameErrorMessage() {
-    return this.password.hasError('required') ? 'You must enter last name' : '';
+    return this.lastName.hasError('required') ? 'You must enter last name' : '';
   }
 
   getCountryErrorMessage() {
-    return this.username.hasError('required') ? 'You must enter country' : '';
+    return this.country.hasError('required') ? 'You must enter country' : '';
   }
 
   getEmailErrorMessage() {
-    return this.password.hasError('required') ? 'You must enter email' : '';
+    return this.email.hasError('required') ? 'You must enter email' : '';
   }
 
   getMobileNumberErrorMessage() {
-    return this.username.hasError('required') ? 'You must enter mobile number' : '';
+    return this.mobileNumber.hasError('required') ? 'You must enter mobile number' : '';
   }
 
   doRegister() {

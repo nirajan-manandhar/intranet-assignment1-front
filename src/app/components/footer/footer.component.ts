@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   edmund: string = "Sunguk (Edmund) Ham, A00979841";
-  nirajan: string = "Nirajan Manandhar, A0";
+  nirajan: string = "Nirajan Manandhar, A01025660";
 
   constructor() { }
 
